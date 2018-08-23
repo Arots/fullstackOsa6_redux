@@ -3,12 +3,12 @@ import React from 'react'
 class Notification extends React.Component {
 	render() {
 		const style = {
-			border: 'solid',
+			border: '2px solid',
 			padding: 10,
 			borderWidth: 1
 		}
 		return (
-			<div style={style}>
+			<div  className="virhe" style={style}>
         render here notification...
 			</div>
 		)
