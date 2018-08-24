@@ -2,11 +2,9 @@ const initialState = ''
 const notificationReducer = (state = initialState, action) => {
 	switch (action.type) {
 	case 'MESSAGE':
-		state = `${action.content} has been added to the list`
-		return state
+		return `'${action.content}' has been added to the list.`
 	case 'NOTIFICATIONVOTE':
-		state = `you voted for ${action.content}`
-		return state
+		return `You voted for '${action.content}'.`
 	case 'CLEAR':
 		return ''
 	default:

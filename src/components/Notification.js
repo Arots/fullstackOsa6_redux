@@ -9,9 +9,9 @@ class Notification extends React.Component {
 		}
 		return (
 			<div>
-				{this.props.store.getState().notification ?
+				{this.props.store.getState().notifications ?
 					<div className="virhe" style={style}> 
-						{this.props.store.getState().notification}
+						{this.props.store.getState().notifications}
 					</div> :
 					<div/>}
 			</div>
