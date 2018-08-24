@@ -21,8 +21,8 @@ const initialState = anecdotesAtStart.map(asObject)
 
 const anecdoteReducer = (store = initialState, action) => {
 	switch (action.type) {
-  case 'VOTE':
-    const id = action.data.id
+	case 'VOTE':
+		const id = action.data.id
 		const old = store.filter(a => a.id !== id)
 		const voted = store.find(a => a.id === id)
 
@@ -30,8 +30,8 @@ const anecdoteReducer = (store = initialState, action) => {
     
 	case 'CREATE':
 
-    return [...store, { content: action.data.content, 
-      id: action.data.id, votes: action.data.votes }]
+		return [...store, { content: action.data.content, 
+			id: action.data.id, votes: action.data.votes }]
     
 	default:
 		return store

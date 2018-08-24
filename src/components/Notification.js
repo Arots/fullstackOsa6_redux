@@ -8,8 +8,12 @@ class Notification extends React.Component {
 			borderWidth: 1
 		}
 		return (
-			<div  className="virhe" style={style}>
-        render here notification...
+			<div>
+				{this.props.store.getState().notification ?
+					<div className="virhe" style={style}> 
+						{this.props.store.getState().notification}
+					</div> :
+					<div/>}
 			</div>
 		)
 	}
