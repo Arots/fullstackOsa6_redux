@@ -7,13 +7,13 @@ import './styles.css'
 class App extends React.Component {
 
 	render() {
-		const anecdotes = this.props.store.getState()
+		const anecdotes = this.props.anecdotes
 		return (
 			<div>
 				<h1>Programming anecdotes</h1>
-				<Notification store={this.props.store} />
-				<AnecdoteList store={this.props.store} />
-				<AnecdoteForm store={this.props.store} />
+				<Notification />
+				<AnecdoteList />
+				<AnecdoteForm />
 			</div>
 		)
 	}
