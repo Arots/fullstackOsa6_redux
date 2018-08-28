@@ -35,13 +35,8 @@ class AnecdoteList extends React.Component {
 }
 
 const anecdotesToShow = (anecdotes, filtering) => {
-	if (filtering) {
-		return anecdotes
-	}
-	else {
-		return anecdotes.filter(anecdote => 
-			anecdote.content.toLowerCase().includes(filtering.toLowerCase()))
-	}
+	return anecdotes.filter(anecdote => 
+		anecdote.content.toLowerCase().includes(filtering.toLowerCase()))
 }
 
 const mapStateToProps = (state) => {
