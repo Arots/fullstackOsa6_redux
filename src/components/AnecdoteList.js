@@ -3,6 +3,7 @@ import { voteAnecdote } from '../reducers/anecdoteReducer'
 import { voteNotification, notificationClear } from '../reducers/notificationReducer'
 import Filter from './Filter'
 import { connect } from 'react-redux'
+import anecdoteService from '../services/anecdotes'
 
 class AnecdoteList extends React.Component {
 	
@@ -19,11 +20,12 @@ class AnecdoteList extends React.Component {
 						<div>
               has {anecdote.votes}
 							<button className="voteButton" 
-								onClick={() => {
+								onClick={ async () => {
+									await anecdoteService.postAnecdote(anecdote)
 									this.props.voteAnecdote(anecdote.id)
 									this.props.voteNotification(anecdote.content)
 									setTimeout(() => {
-										this.props.notificationClear()}, 5000)}}>
+										this.props.notificationClear()}, 3000)}}>
                 vote
 							</button>
 						</div>
