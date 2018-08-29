@@ -13,24 +13,38 @@ const notificationReducer = (state = initialState, action) => {
 
 }
 
-export const notificationChange = (notification) => {
-	return {
-		type: 'MESSAGE',
-		content: notification
+export const notificationChange = (notification, timeout) => {
+	return async (dispatch) => {
+		dispatch({
+			type: 'MESSAGE',
+			content: notification
+		})
+		setTimeout(() => {
+			dispatch({
+				type: 'CLEAR'
+			})
+		}, timeout * 1000)
 	}
 }
 
-export const voteNotification = (notification) => {
-	return {
-		type: 'NOTIFICATIONVOTE',
-		content: notification
+export const voteNotification = (notification, timeout) => {
+	return async (dispatch) => {
+		dispatch({
+			type: 'NOTIFICATIONVOTE',
+			content: notification
+		})
+		setTimeout(() => {
+			dispatch({
+				type: 'CLEAR'
+			})
+		}, timeout * 1000)
 	}
 }
 
-export const notificationClear = () => {
+/*export const notificationClear = () => {
 	return {
 		type: 'CLEAR'
 	}
-}
+}*/
 
 export default notificationReducer

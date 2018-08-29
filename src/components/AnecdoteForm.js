@@ -9,10 +9,7 @@ class AnecdoteForm extends React.Component {
     const content = e.target.anecdote.value
     e.target.anecdote.value = ''
     this.props.anecdoteCreator(content)
-    this.props.notificationChange(content)
-    setTimeout(() => {
-      this.props.notificationClear()
-    }, 3000)
+    this.props.notificationChange(content, 3)
   }
 
    render() {
@@ -30,8 +27,7 @@ class AnecdoteForm extends React.Component {
 
 const mapDispatchToProps = {
   anecdoteCreator,
-  notificationChange,
-  notificationClear
+  notificationChange
 }
 
 export default connect(

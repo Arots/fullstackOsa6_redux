@@ -35,6 +35,7 @@ export const anecdoteCreator = (anecdote) => {
 export const voteAnecdote = (anecdote) => {
 	return async (dispatch) => {
 		const updatedAnecdote = await anecdoteService.changeAnecdote(anecdote)
+		console.log(updatedAnecdote)
 		dispatch({
 			type: 'VOTE',
 			data: updatedAnecdote

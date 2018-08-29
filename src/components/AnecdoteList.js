@@ -1,6 +1,6 @@
 import React from 'react'
 import { voteAnecdote } from '../reducers/anecdoteReducer'
-import { voteNotification, notificationClear } from '../reducers/notificationReducer'
+import { voteNotification } from '../reducers/notificationReducer'
 import Filter from './Filter'
 import { connect } from 'react-redux'
 
@@ -21,9 +21,7 @@ class AnecdoteList extends React.Component {
 							<button className="voteButton" 
 								onClick={() => {
 									this.props.voteAnecdote(anecdote)
-									this.props.voteNotification(anecdote.content)
-									setTimeout(() => {
-										this.props.notificationClear()}, 3000)}}>
+									this.props.voteNotification(anecdote.content, 3)}}>
                 vote
 							</button>
 						</div>
@@ -47,8 +45,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps =  {
 	voteAnecdote,
-	voteNotification,
-	notificationClear
+	voteNotification
 }
 
 export default connect(
