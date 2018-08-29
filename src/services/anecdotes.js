@@ -12,7 +12,7 @@ const newAnecdote = async (content) => {
 	return response.data
 }
 
-const postAnecdote = async (anecdote) => {
+const changeAnecdote = async (anecdote) => {
 	const newAnecdote = {
 		content: anecdote.content,
 		id: anecdote.id,
@@ -26,4 +26,4 @@ const remove = async (id) => {
 
 }
 
-export default { getAll, newAnecdote, postAnecdote, remove }
+export default { getAll, newAnecdote, changeAnecdote, remove }
